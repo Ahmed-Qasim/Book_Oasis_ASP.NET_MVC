@@ -1,0 +1,35 @@
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.csproj.AssemblyReference.cache
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.AssemblyInfoInputs.cache
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.AssemblyInfo.cs
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.csproj.CoreCompileInputs.cache
+Q:\My Projects\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.DataAccess.deps.json
+Q:\My Projects\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.DataAccess.runtimeconfig.json
+Q:\My Projects\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.DataAccess.dll
+Q:\My Projects\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.DataAccess.pdb
+Q:\My Projects\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.Models.dll
+Q:\My Projects\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.Models.pdb
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.csproj.CopyComplete
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.dll
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\refint\Book Oasis.DataAccess.dll
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.pdb
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.genruntimeconfig.cache
+Q:\My Projects\Book Oasis.DataAccess\obj\Debug\net7.0\ref\Book Oasis.DataAccess.dll
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.DataAccess.deps.json
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.DataAccess.runtimeconfig.json
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.DataAccess.dll
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.DataAccess.pdb
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.Models.dll
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.Models.pdb
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.csproj.AssemblyReference.cache
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.AssemblyInfoInputs.cache
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.AssemblyInfo.cs
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.csproj.CoreCompileInputs.cache
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.sourcelink.json
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.csproj.CopyComplete
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.dll
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\refint\Book Oasis.DataAccess.dll
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.pdb
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.genruntimeconfig.cache
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\ref\Book Oasis.DataAccess.dll
