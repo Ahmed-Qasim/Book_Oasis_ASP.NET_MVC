@@ -1,0 +1,75 @@
+﻿
+@model Company
+
+<form method="post" enctype="multipart/form-data">
+	<input asp-for="Id" hidden />
+	<div class="row">
+		<div class="col-12">
+			<div class=" p-3  mt-2">
+				<div class="row">
+					<h2 class="p-0">@(Model.Id != 0 ? "Update" : "Add") Company</h2>
+				</div>
+				<hr />
+				<div asp-validation-summary="All"></div>
+				<div class="mb-3">
+					<label class="mb-2">Company Name</label>
+					<input asp-for="Name" type="text" class=" form-control" />
+					<span asp-validation-for="Name" class="text-danger "></span>
+				</div>
+				
+				<div class="mb-3">
+					<label asp-for="PhoneNumber" class="mb-2"></label>
+					<input asp-for="PhoneNumber" class=" form-control p" />
+					<span asp-validation-for="PhoneNumber" class="text-danger "></span>
+				</div>
+				<div class="mb-3">
+					<label asp-for="StreetAddress" class="mb-2"></label>
+					<input asp-for="StreetAddress" class=" form-control p" />
+					<span asp-validation-for="StreetAddress" class="text-danger "></span>
+				</div>
+				<div class="mb-3">
+					<label asp-for="State" class="mb-2"></label>
+					<input asp-for="State" class=" form-control p" />
+					<span asp-validation-for="State" class="text-danger "></span>
+				</div>
+				<div class="mb-3">
+					<label asp-for="City" class="mb-2"></label>
+					<input asp-for="City" class=" form-control p" />
+					<span asp-validation-for="City" class="text-danger "></span>
+				</div>
+				<div class="mb-3">
+					<label asp-for="PostalCode" class="mb-2"></label>
+					<input asp-for="PostalCode" class=" form-control p" />
+					<span asp-validation-for="PostalCode" class="text-danger "></span>
+				</div>
+				
+				
+				<div class="row mt-2">
+					<div class="col-6 col-md-3">
+						@if (Model.Id != 0)
+						{
+							<button class="btn btn-success form-control" asp-controller="Company" asp-action="Upsert">Update</button>
+						}
+						else
+						{
+							<button class="btn btn-success form-control" asp-controller="Company" asp-action="Upsert">Create</button>
+						}
+
+					</div>
+					<div class="col-6 col-md-3">
+						<a asp-controller="Company" asp-action="Index" class="btn btn-secondary form-control"> Back to List </a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+	
+
+</form>
+
+ @section Scripts {
+	
+		<partial name="_ValidationScriptsPartial" />
+	}
