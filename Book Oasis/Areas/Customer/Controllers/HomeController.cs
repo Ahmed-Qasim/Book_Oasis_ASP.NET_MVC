@@ -45,12 +45,23 @@ namespace Book_Oasis.Areas.Customer.Controllers
 
             var claimIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
-
-
-
             shoppingCart.ApplicationUserId = userId;
 
-            _unitOfWork.ShoppingCartRepository.Add(shoppingCart);
+            ShoppingCart cartFromDb = _unitOfWork.ShoppingCartRepository.Get(u => u.ApplicationUserId == userId
+            && u.ProductId == shoppingCart.ProductId);
+
+            if (cartFromDb != null)
+            {
+                cartFromDb.Count += 1;
+                _unitOfWork.ShoppingCartRepository.Update(cartFromDb);
+            }
+            else
+            {
+
+                _unitOfWork.ShoppingCartRepository.Add(shoppingCart);
+            }
+
+
             _unitOfWork.Save();
 
             return RedirectToAction(nameof(Index));
