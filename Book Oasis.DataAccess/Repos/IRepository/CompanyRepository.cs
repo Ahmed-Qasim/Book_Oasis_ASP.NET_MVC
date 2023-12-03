@@ -15,7 +15,7 @@ namespace Book_Oasis.DataAccess.Repos.IRepository
 
 		public void Update(Company company)
 		{
-			_context.companies.Update(company);
+			_context.Companies.Update(company);
 		}
 	}
 

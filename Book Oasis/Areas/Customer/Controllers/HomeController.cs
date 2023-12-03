@@ -54,6 +54,7 @@ namespace Book_Oasis.Areas.Customer.Controllers
             {
                 cartFromDb.Count += 1;
                 _unitOfWork.ShoppingCartRepository.Update(cartFromDb);
+
             }
             else
             {
@@ -61,7 +62,7 @@ namespace Book_Oasis.Areas.Customer.Controllers
                 _unitOfWork.ShoppingCartRepository.Add(shoppingCart);
             }
 
-
+            TempData["success"] = "Updated Successfully";
             _unitOfWork.Save();
 
             return RedirectToAction(nameof(Index));
