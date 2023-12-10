@@ -17,6 +17,37 @@ namespace Book_Oasis.DataAccess.Repos.IRepository
 		{
 			_context.OrderHeaders.Update(orderHeader);
 		}
+
+		public void UpdateStatus(int id, string orderStatus, string? paymentStatus = null)
+		{
+			var orderFromDb = _context.OrderHeaders.FirstOrDefault(x => x.Id == id);
+			if (orderFromDb != null)
+			{
+				orderFromDb.OrderStatus = orderStatus;
+				if (!string.IsNullOrEmpty(paymentStatus))
+				{
+					orderFromDb.PaymentStatus = paymentStatus;
+				}
+
+			}
+
+		}
+
+		public void UpdateStrripePaymentID(int id, string sessionId, string paymentIntenId)
+		{
+			var orderFromDb = _context.OrderHeaders.FirstOrDefault(x => x.Id == id);
+			if (!string.IsNullOrEmpty(sessionId))
+			{
+				orderFromDb.SessionId = sessionId;
+				if (!string.IsNullOrEmpty(paymentIntenId))
+				{
+					orderFromDb.PaymentIntenId = paymentIntenId;
+					orderFromDb.PaymentDate = DateTime.Now;
+				}
+
+			}
+
+		}
 	}
 
 }

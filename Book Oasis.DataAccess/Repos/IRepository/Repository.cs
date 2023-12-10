@@ -15,6 +15,7 @@ namespace Book_Oasis.DataAccess.Repos.IRepository
 			_context = context;
 			this.DbSet = _context.Set<T>();
 			_context.Products.Include(u => u.Category).ToList();
+			_context.OrderHeaders.Include(u => u.ApplicationUser).ToList();
 		}
 
 		public void Add(T entity)

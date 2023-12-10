@@ -4,6 +4,7 @@ using Book_Oasis.Models.ViewModels;
 using Book_Oasis.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Stripe.Checkout;
 using System.Security.Claims;
 
 namespace Book_Oasis.Areas.Customer.Controllers
@@ -161,8 +162,44 @@ namespace Book_Oasis.Areas.Customer.Controllers
 			if (applicationUser.CompanyId.GetValueOrDefault() == 0)
 			{
 				//stripe logic
-			}
 
+				var domain = "https://localhost:7051/";
+				var options = new SessionCreateOptions
+				{
+					SuccessUrl = domain + $"customer/cart/OrderConfirmation/{ShoppingCartVM.OrderHeader.Id}",
+					CancelUrl = domain + "customer/cart/Index",
+					LineItems = new List<SessionLineItemOptions>(),
+					Mode = "payment",
+				};
+
+
+				foreach (var item in ShoppingCartVM.ShoppingCartList)
+				{
+					var sessionItem = new SessionLineItemOptions
+					{
+						PriceData = new SessionLineItemPriceDataOptions
+						{
+							UnitAmount = (long)(item.Price * 100),
+							Currency = "usd",
+							ProductData = new SessionLineItemPriceDataProductDataOptions
+							{
+								Name = item.Product.Title,
+
+							}
+						},
+						Quantity = item.Count
+					};
+					options.LineItems.Add(sessionItem);
+				}
+
+				var service = new SessionService();
+				Session session = service.Create(options);
+				_unitOfWork.OrderHeaderRepository.UpdateStrripePaymentID(ShoppingCartVM.OrderHeader.Id, session.Id, session.PaymentIntentId);
+				_unitOfWork.Save();
+				Response.Headers.Add("Location", session.Url);
+				return new StatusCodeResult(303);
+
+			}
 
 			return RedirectToAction(nameof(OrderConfirmation), new { ShoppingCartVM.OrderHeader.Id });
 		}
@@ -170,6 +207,24 @@ namespace Book_Oasis.Areas.Customer.Controllers
 
 		public IActionResult OrderConfirmation(int id)
 		{
+			OrderHeader orderHeader = _unitOfWork.OrderHeaderRepository.Get(u => u.Id == id, includeProp: "ApplicationUser");
+			if (orderHeader.PaymentStatus != StaticDetails.PaymentStatusDelayedPayment)
+			{
+				var service = new SessionService();
+				Session session = service.Get(orderHeader.SessionId);
+				//check the stripe status
+				if (session.PaymentStatus.ToLower() == "paid")
+				{
+					_unitOfWork.OrderHeaderRepository.UpdateStrripePaymentID(id, orderHeader.SessionId, session.PaymentIntentId);
+					_unitOfWork.OrderHeaderRepository.UpdateStatus(id, StaticDetails.StatusApproved, StaticDetails.PaymentStatusApproved);
+					_unitOfWork.Save();
+				}
+			}
+			List<ShoppingCart> shoppingCarts = _unitOfWork.ShoppingCartRepository.GetAll(u => u.ApplicationUserId ==
+		  orderHeader.ApplicationUserId).ToList();
+			HttpContext.Session.Clear();
+			_unitOfWork.ShoppingCartRepository.DeleteAll(shoppingCarts);
+			_unitOfWork.Save();
 			return View(id);
 
 		}
