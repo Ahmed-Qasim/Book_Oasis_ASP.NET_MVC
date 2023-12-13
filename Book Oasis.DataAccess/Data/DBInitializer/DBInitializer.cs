@@ -45,7 +45,7 @@ namespace Book_Oasis.DataAccess.Data.DBInitializer
                 _userManager.CreateAsync(new ApplicationUser
                 {
                     UserName = "Qasim",
-                    Email = "admin@qasim.com",
+                    Email = "admin@gmail.com",
                     Name = "Ahmed Qasim",
                     PhoneNumber = "1112223333",
                     StreetAddress = "test 123 kotany",
@@ -55,7 +55,7 @@ namespace Book_Oasis.DataAccess.Data.DBInitializer
                 }, "Password@1").GetAwaiter().GetResult();
 
 
-                ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@qasim.com");
+                ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@gmail.com");
 
                 _userManager.AddToRoleAsync(user, StaticDetails.Role_Admin).GetAwaiter().GetResult();
 
