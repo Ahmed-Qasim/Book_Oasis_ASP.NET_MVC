@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Book Oasis.Models\Book Oasis.Models.csproj" />
+    <ProjectReference Include="..\Book Oasis.Utility\Book Oasis.Utility.csproj" />
   </ItemGroup>
 
 </Project>

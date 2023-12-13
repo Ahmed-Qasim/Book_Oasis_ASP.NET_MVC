@@ -1,5 +1,6 @@
 
 using Book_Oasis.DataAccess;
+using Book_Oasis.DataAccess.Data.DBInitializer;
 using Book_Oasis.DataAccess.Repos.Interfaces;
 using Book_Oasis.DataAccess.Repos.IRepository;
 using Book_Oasis.Utility;
@@ -39,6 +40,7 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+builder.Services.AddScoped<IDBInitializer, DBInitializer>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 
@@ -56,6 +58,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
 app.UseRouting();
+SeedDatabase();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseSession();
@@ -66,3 +69,12 @@ app.MapControllerRoute(
     pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+void SeedDatabase()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDBInitializer>();
+        dbInitializer.Initialize();
+    }
+}

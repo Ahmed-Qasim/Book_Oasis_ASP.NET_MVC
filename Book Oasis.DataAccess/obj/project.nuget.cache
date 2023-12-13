@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g9ZTL0p4VcycypgWupPpLzS8HiSLuDkbCgWlWMg0B30xhlUy54XdnroAzrtkKke92c72qJi7WTiJflMRyjl/Mg==",
+  "dgSpecHash": "Z0a7cD4pSE4rdK2RCm5Eg32Aq6BdL80KmD6soE6Bkq8H1bnLrvJvObchv7liYoFbqT/gWa38SiRwvzjFOzTMjQ==",
   "success": true,
   "projectFilePath": "Q:\\My Projects\\Book Oasis Complete\\Book Oasis.DataAccess\\Book Oasis.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -74,6 +74,7 @@
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.2.0\\microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\7.0.0\\microsoft.aspnetcore.identity.entityframeworkcore.7.0.0.nupkg.sha512",
+    "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.0\\microsoft.aspnetcore.identity.ui.7.0.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\2.2.0\\microsoft.aspnetcore.jsonpatch.2.2.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.aspnetcore.mvc.core\\2.2.0\\microsoft.aspnetcore.mvc.core.2.2.0.nupkg.sha512",
@@ -119,7 +120,8 @@
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.dependencymodel\\7.0.0\\microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
-    "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\2.2.0\\microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\7.0.0\\microsoft.extensions.fileproviders.embedded.7.0.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\2.2.0\\microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.identity.core\\7.0.12\\microsoft.extensions.identity.core.7.0.12.nupkg.sha512",
     "C:\\Users\\Ahmed Qasim\\.nuget\\packages\\microsoft.extensions.identity.stores\\7.0.12\\microsoft.extensions.identity.stores.7.0.12.nupkg.sha512",

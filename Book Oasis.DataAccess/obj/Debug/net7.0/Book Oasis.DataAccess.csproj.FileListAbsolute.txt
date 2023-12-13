@@ -33,3 +33,5 @@ Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\refint
 Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.pdb
 Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\Book Oasis.DataAccess.genruntimeconfig.cache
 Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\obj\Debug\net7.0\ref\Book Oasis.DataAccess.dll
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.Utility.dll
+Q:\My Projects\Book Oasis Complete\Book Oasis.DataAccess\bin\Debug\net7.0\Book Oasis.Utility.pdb
