@@ -1,6 +1,7 @@
 ﻿using Book_Oasis.DataAccess.Repos.Interfaces;
 using Book_Oasis.Models;
 using Book_Oasis.Models.Models;
+using Book_Oasis.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -21,6 +22,7 @@ namespace Book_Oasis.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
+
             IEnumerable<Product> productsList = _unitOfWork.ProductRepository.GetAll(includeProp: "Category");
             return View(productsList);
         }
@@ -52,14 +54,18 @@ namespace Book_Oasis.Areas.Customer.Controllers
 
             if (cartFromDb != null)
             {
-                cartFromDb.Count += 1;
+                cartFromDb.Count += shoppingCart.Count;
                 _unitOfWork.ShoppingCartRepository.Update(cartFromDb);
+                _unitOfWork.Save();
 
             }
             else
             {
-
                 _unitOfWork.ShoppingCartRepository.Add(shoppingCart);
+                _unitOfWork.Save();
+                HttpContext.Session.SetInt32(StaticDetails.SessionCart,
+               _unitOfWork.ShoppingCartRepository.GetAll(u => u.ApplicationUserId == userId).Count());
+
             }
 
             TempData["success"] = "Updated Successfully";
