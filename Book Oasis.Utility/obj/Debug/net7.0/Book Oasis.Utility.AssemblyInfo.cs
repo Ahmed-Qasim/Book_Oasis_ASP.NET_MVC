@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Book Oasis.Utility")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2388387499cef8c9b0ddba382a2e84b1313d27ca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Book Oasis.Utility")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Book Oasis.Utility")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

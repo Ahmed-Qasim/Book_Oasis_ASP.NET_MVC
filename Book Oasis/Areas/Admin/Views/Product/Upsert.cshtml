@@ -3,7 +3,7 @@
 
 <form method="post" enctype="multipart/form-data">
 	<input asp-for="Product.Id" hidden />
-	<input asp-for="Product.ImgUrl" hidden />
+	@* <input asp-for="Product.ImgUrl" hidden /> *@
 	<div class="row">
 		<div class="col-10">
 			<div class=" p-3  mt-2">
@@ -53,7 +53,7 @@
 					<span asp-validation-for="Product.Price100" class="text-danger "></span>
 				</div>
 				<div class="mb-3">
-					<label asp-for="Product.ImgUrl" class="mb-2"></label>
+					@* <label asp-for="Product.ImgUrl" class="mb-2"></label> *@
 					<input type="file" name="img" class=" form-control p" /> 
 
 				</div>
@@ -84,7 +84,7 @@
 			</div>
 		</div>
 		<div class="col-2">
-			<img src="@Model.Product.ImgUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9"/>
+			@* <img src="@Model.Product.ImgUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9"/> *@
 		</div>
 	</div>
 	

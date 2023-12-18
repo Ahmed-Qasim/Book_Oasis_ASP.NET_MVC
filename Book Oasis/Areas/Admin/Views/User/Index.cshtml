@@ -1,10 +1,10 @@
-﻿@model  List<Product>
+﻿
 
-	<partial name="_Notification" />
+<partial name="_Notification" />
 <div class="container">
 	<div class="row pt-4 pb-4">
 		<div class="col-6">
-			<h2 class=""> Product list</h2>
+			<h2 class=""> User list</h2>
 		</div>
 		<div class="col-6 text-end">
 			<a asp-controller="Product" asp-action="Upsert" class="btn btn-primary">
@@ -16,20 +16,20 @@
 	<table id="tblData" class="table table-bordered table-striped" style="width:100%">
 		<thead>
 			<tr>
-				<th>Title</th>
-				<th>ISBN</th>
-				<th>Price</th>
-				<th>Author</th>
-				<th>Category</th>
-				<th>Edit/Delete </th>
-
 				
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Company</th>
+				<th>Role</th>
+				<th> </th>
+
 			</tr>
 		</thead>
-	
+
 	</table>
 </div>
 
-@section Scripts{
-	<script src="~/js/Product.js"></script>
+@section Scripts {
+	<script src="~/js/user.js"></script>
 }

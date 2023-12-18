@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Book Oasis.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcf4a1ebbd5b8aae0bf88aa4d6abef13dcdd5785")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b95d36c979b83fdc88f394d53c09f12724e949e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Book Oasis.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Book Oasis.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

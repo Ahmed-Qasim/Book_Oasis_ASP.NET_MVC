@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\Book Oasis",
-    "\\Book Oasis.DataAccess",
-    "\\Book Oasis.DataAccess\\Repos",
-    "\\Book Oasis.DataAccess\\Repos\\Interfaces",
     "\\Book Oasis\\Areas",
     "\\Book Oasis\\Areas\\Customer",
     "\\Book Oasis\\Areas\\Customer\\Controllers",
     "\\Book Oasis\\Areas\\Customer\\Views",
-    "\\Book Oasis\\Areas\\Customer\\Views\\Home"
+    "\\Book Oasis\\Areas\\Customer\\Views\\Home",
+    "\\Book Oasis\\Areas\\Identity",
+    "\\Book Oasis\\Areas\\Identity\\Pages",
+    "\\Book Oasis\\Areas\\Identity\\Pages\\Account"
   ],
-  "SelectedNode": "\\Book Oasis.DataAccess\\Repos\\Interfaces\\IRepository.cs",
+  "SelectedNode": "\\Book Oasis\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
   "PreviewInSolutionExplorer": false
 }

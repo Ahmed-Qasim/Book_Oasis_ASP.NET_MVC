@@ -127,7 +127,7 @@ namespace Book_Oasis.Areas.Identity.Pages.Account
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-           
+
 
             Input = new()
             {

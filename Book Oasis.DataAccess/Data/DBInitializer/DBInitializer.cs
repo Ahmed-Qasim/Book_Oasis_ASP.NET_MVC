@@ -44,13 +44,14 @@ namespace Book_Oasis.DataAccess.Data.DBInitializer
                 //create first admin
                 _userManager.CreateAsync(new ApplicationUser
                 {
-                    UserName = "Qasim",
+                    UserName = "admin@gmail.com",
                     Email = "admin@gmail.com",
                     Name = "Ahmed Qasim",
                     PhoneNumber = "1112223333",
                     StreetAddress = "test 123 kotany",
                     State = "Garbia",
                     PostalCode = "23422",
+                    EmailConfirmed = true,
                     City = "Tanta"
                 }, "Password@1").GetAwaiter().GetResult();
 
@@ -58,7 +59,6 @@ namespace Book_Oasis.DataAccess.Data.DBInitializer
                 ApplicationUser user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@gmail.com");
 
                 _userManager.AddToRoleAsync(user, StaticDetails.Role_Admin).GetAwaiter().GetResult();
-
 
             }
 
