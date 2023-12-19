@@ -9,80 +9,80 @@ using System.Security.Claims;
 
 namespace Book_Oasis.Areas.Customer.Controllers
 {
-    [Area("Customer")]
-    public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IUnitOfWork _unitOfWork;
-        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
-        {
-            _logger = logger;
-            _unitOfWork = unitOfWork;
-        }
+	[Area("Customer")]
+	public class HomeController : Controller
+	{
+		private readonly ILogger<HomeController> _logger;
+		private readonly IUnitOfWork _unitOfWork;
+		public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
+		{
+			_logger = logger;
+			_unitOfWork = unitOfWork;
+		}
 
-        public IActionResult Index()
-        {
+		public IActionResult Index()
+		{
 
-            IEnumerable<Product> productsList = _unitOfWork.ProductRepository.GetAll(includeProp: "Category");
-            return View(productsList);
-        }
+			IEnumerable<Product> productsList = _unitOfWork.ProductRepository.GetAll(includeProp: "Category,ProductImages");
+			return View(productsList);
+		}
 
-        public IActionResult Details(int productId)
-        {
-            ShoppingCart shoppingCartItem = new()
-            {
-                Product = _unitOfWork.ProductRepository.Get(u => u.Id == productId, includeProp: "Category"),
-                Count = 1,
-                ProductId = productId
-            };
+		public IActionResult Details(int productId)
+		{
+			ShoppingCart shoppingCartItem = new()
+			{
+				Product = _unitOfWork.ProductRepository.Get(u => u.Id == productId, includeProp: "Category,ProductImages"),
+				Count = 1,
+				ProductId = productId
+			};
 
 
-            return View(shoppingCartItem);
-        }
+			return View(shoppingCartItem);
+		}
 
-        [HttpPost]
-        [Authorize]
-        public IActionResult Details(ShoppingCart shoppingCart)
-        {
+		[HttpPost]
+		[Authorize]
+		public IActionResult Details(ShoppingCart shoppingCart)
+		{
 
-            var claimIdentity = (ClaimsIdentity)User.Identity;
-            var userId = claimIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
-            shoppingCart.ApplicationUserId = userId;
+			var claimIdentity = (ClaimsIdentity)User.Identity;
+			var userId = claimIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+			shoppingCart.ApplicationUserId = userId;
 
-            ShoppingCart cartFromDb = _unitOfWork.ShoppingCartRepository.Get(u => u.ApplicationUserId == userId
-            && u.ProductId == shoppingCart.ProductId);
+			ShoppingCart cartFromDb = _unitOfWork.ShoppingCartRepository.Get(u => u.ApplicationUserId == userId
+			&& u.ProductId == shoppingCart.ProductId);
 
-            if (cartFromDb != null)
-            {
-                cartFromDb.Count += shoppingCart.Count;
-                _unitOfWork.ShoppingCartRepository.Update(cartFromDb);
-                _unitOfWork.Save();
+			if (cartFromDb != null)
+			{
+				cartFromDb.Count += shoppingCart.Count;
+				_unitOfWork.ShoppingCartRepository.Update(cartFromDb);
+				_unitOfWork.Save();
 
-            }
-            else
-            {
-                _unitOfWork.ShoppingCartRepository.Add(shoppingCart);
-                _unitOfWork.Save();
-                HttpContext.Session.SetInt32(StaticDetails.SessionCart,
-               _unitOfWork.ShoppingCartRepository.GetAll(u => u.ApplicationUserId == userId).Count());
+			}
+			else
+			{
+				_unitOfWork.ShoppingCartRepository.Add(shoppingCart);
+				_unitOfWork.Save();
+				HttpContext.Session.SetInt32(StaticDetails.SessionCart,
+			   _unitOfWork.ShoppingCartRepository.GetAll(u => u.ApplicationUserId == userId).Count());
 
-            }
+			}
 
-            TempData["success"] = "Updated Successfully";
-            _unitOfWork.Save();
+			TempData["success"] = "Updated Successfully";
+			_unitOfWork.Save();
 
-            return RedirectToAction(nameof(Index));
-        }
+			return RedirectToAction(nameof(Index));
+		}
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+		public IActionResult Privacy()
+		{
+			return View();
+		}
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-    }
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Error()
+		{
+			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		}
+	}
 }

@@ -11,6 +11,7 @@ namespace Book_Oasis.DataAccess.Repos.IRepository
 		public IApplicationUserRepository ApplicationUserRepository { get; set; }
 		public IOrderHeaderRepository OrderHeaderRepository { get; set; }
 		public IOrderDetailRepository OrderDetailRepository { get; set; }
+		public IProductImageRepository ProductImageRepository { get; set; }
 
 		private readonly ApplicationDbContext _context;
 
@@ -24,9 +25,7 @@ namespace Book_Oasis.DataAccess.Repos.IRepository
 			ApplicationUserRepository = new ApplicationUserRepository(_context);
 			OrderHeaderRepository = new OrderHeaderRepository(_context);
 			OrderDetailRepository = new OrderDetailRepository(_context);
-
-
-
+			ProductImageRepository = new ProductImageRepository(_context);
 
 		}
 

@@ -28,15 +28,12 @@ namespace Book_Oasis.DataAccess.Repos.IRepository
 				objFromDb.Description = product.Description;
 				objFromDb.CategoryId = product.CategoryId;
 				objFromDb.Author = product.Author;
-				//if (product.ImgUrl != null)
-				//{
-				//    objFromDb.ImgUrl = product.ImgUrl;
-				//}
+				objFromDb.ProductImages = product.ProductImages;
 			}
 		}
 
 
-		//_context.Products.Update(objFromDb);
+
 	}
 }
 

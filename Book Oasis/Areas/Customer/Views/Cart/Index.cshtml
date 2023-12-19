@@ -16,11 +16,18 @@
 			</div>
 
 			<div class="card-body">
-				@foreach (var item in Model.ShoppingCartList)
+				@foreach(var item in Model.ShoppingCartList)
 				{
 					<div class="row">
 						<div class="d-none d-lg-block col-lg-1 text-center py-2">
-							@* <img src="@item.Product.ImgUrl" class="rounded" width="100%" /> *@
+							@if (item.Product.ProductImages != null && item.Product.ProductImages.Count() > 0)
+							{
+								<img src="@item.Product.ProductImages.FirstOrDefault().ImageUrl" class="card-img-top rounded" />
+							}
+							else
+							{
+								<img src="https://placehold.co/600x500png" class="card-img-top rounded" />
+							}
 						</div>
 						<div class="col-12 col-lg-6 pt-md-3">
 							<h5><strong>@item.Product.Title</strong></h5>
